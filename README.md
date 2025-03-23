@@ -19,7 +19,7 @@
 
 # Objetivo
 
-Apesar da presença dos sistemas operaqcionais em praticamente todas as tecnologias digitais, o reconhecimento de sua importância diminuiu à medida que os usuários deixaram de precisar interagir diretamente com o sistema, tornando sua atuação menos perceptível no dia a dia.
+Apesar da presença dos sistemas operacionais em praticamente todas as tecnologias digitais, o reconhecimento de sua importância diminuiu à medida que os usuários deixaram de precisar interagir diretamente com o sistema, tornando sua atuação menos perceptível no dia a dia.
 
 Decorrente disso, este projeto tem como objetivo divulgar para a população, de forma didática e acolhedora, a relevância dos sistemas operacionais, destacando seus principais componentes, funcionalidades e impacto na vida cotidiana, dando ênfase nas operações de threads e semáforos.
 
@@ -90,7 +90,7 @@ O compilador **g++** é necessário para compilar e executar este projeto. Siga 
 
 Após instalar o g++, você estará pronto para compilar e executar o projeto!
 
-## Instalação da SFML (Requisito para execução)
+## Instalação da SFML
 
 A biblioteca SFML (Simple and Fast Multimedia Library) é necessária para o funcionamento deste projeto. Siga os passos abaixo para instalá-la no seu sistema:
 
