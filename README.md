@@ -31,7 +31,66 @@ Criação de um QUIZ que aborda perguntas sobre sistemas operacionais. Para isso
 - Makefile
 - Git/GitHub
 
-# Instalação da SFML (Requisito para execução)
+# Dependências
+
+## Instalação do Compilador g++
+
+O compilador **g++** é necessário para compilar e executar este projeto. Siga as instruções abaixo para instalá-lo no seu sistema:
+
+### Para Linux (Ubuntu/Debian)
+1. Atualize os pacotes do sistema:
+   ```bash
+   sudo apt update
+   sudo apt upgrade
+   ```
+
+2. Instale o g++:
+   ```bash
+   sudo apt install g++
+   ```
+
+3. Verifique se a instalação foi concluída com sucesso:
+   ```bash
+   g++ --version
+   ```
+
+### Para Windows
+1. Baixe o **MinGW** (Minimalist GNU for Windows), que inclui o g++:
+   - Acesse o site oficial: [https://sourceforge.net/projects/mingw/](https://sourceforge.net/projects/mingw/).
+   - Baixe e instale o MinGW.
+
+2. Durante a instalação, selecione o pacote `g++` no gerenciador de pacotes do MinGW.
+
+3. Adicione o diretório `bin` do MinGW ao PATH do sistema:
+   - Vá até as configurações do sistema → Variáveis de Ambiente.
+   - Adicione o caminho do diretório `bin` (ex.: `C:\MinGW\bin`) à variável `PATH`.
+
+4. Verifique se o g++ foi instalado corretamente:
+   - Abra o terminal (Prompt de Comando ou PowerShell) e execute:
+     ```bash
+     g++ --version
+     ```
+
+### Para macOS
+1. Instale o **Xcode Command Line Tools**, que inclui o g++:
+   ```bash
+   xcode-select --install
+   ```
+
+2. Siga as instruções na tela para concluir a instalação.
+
+3. Verifique se o g++ foi instalado corretamente:
+   ```bash
+   g++ --version
+   ```
+
+### Links úteis
+- [Documentação oficial do GCC](https://gcc.gnu.org/)
+- [MinGW no SourceForge](https://sourceforge.net/projects/mingw/)
+
+Após instalar o g++, você estará pronto para compilar e executar o projeto!
+
+## Instalação da SFML (Requisito para execução)
 
 A biblioteca SFML (Simple and Fast Multimedia Library) é necessária para o funcionamento deste projeto. Siga os passos abaixo para instalá-la no seu sistema:
 
