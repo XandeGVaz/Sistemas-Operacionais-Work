@@ -4,7 +4,7 @@
 
 <div  align="center">
     <img 
-        src="./images/QuizImage.jpg"
+        src="./assets/images/QuizImage.jpg"
         width="500px"
     />
 </div>
