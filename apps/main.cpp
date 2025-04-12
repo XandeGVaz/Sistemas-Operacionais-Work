@@ -12,13 +12,19 @@ std::string PlayerName;
 // Score do jogador
 int Score;
 
+// Fonte de escrita
+sf::Font Font;
+
 
 int main(){
-
+    
     // Definição das propriedades da tela principal
     Window.setFramerateLimit(FRAME_RATE); 
+    
+    // Carregamento da fonte principal de texto
+    Font.loadFromFile("./assets/fonts/font.otf");
 
     // Login do Jogador
-    PlayerName = catchPlayerName(Window);
+    PlayerName = catchPlayerName(Window, Font);
     return 0;
 }

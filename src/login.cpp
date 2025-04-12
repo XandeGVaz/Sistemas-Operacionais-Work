@@ -1,6 +1,6 @@
 #include "login.hpp"
 
-std::string catchPlayerName(sf::RenderWindow &window){
+std::string catchPlayerName(sf::RenderWindow &window, sf::Font &font){
 
     // Variáveis para captura do nome do jogador
     std::string playerName;
@@ -25,8 +25,6 @@ std::string catchPlayerName(sf::RenderWindow &window){
     textName.setPosition(SCREEN_WIDTH / 2 + 20, 340); // posição do texto na tela
   
     // Configuração da fonte do texto
-    sf::Font font;
-    font.loadFromFile("./assets/fonts/boorsok.otf");
     textName.setFont(font);
   
     // Variável para verificação de eventos

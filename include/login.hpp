@@ -4,7 +4,7 @@
 #include "globals.hpp"
 
 
-std::string catchPlayerName(sf::RenderWindow &window);
+std::string catchPlayerName(sf::RenderWindow &window, sf::Font &Font);
 
 
 
