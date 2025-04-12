@@ -7,7 +7,7 @@ std::string catchPlayerName(sf::RenderWindow &window, sf::Font &font){
 
     // Imagem de fundo da tela de captura de nome
     sf::Image image;
-    if(! image.loadFromFile("./assets/images/catchPlayerName.png"))
+    if(! image.loadFromFile("./assets/images/game/catchPlayerName.png"))
       std::cout << "Erro na leitura de imagem de captura de nome" << std::endl;
     
     // Textura do fundo da tela de jogo
