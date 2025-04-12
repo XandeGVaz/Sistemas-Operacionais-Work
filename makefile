@@ -9,7 +9,7 @@ SFMLFLAGS = -lsfml-graphics -lsfml-window -lsfml-system -g
 all: clean libed myapps
 
 libed:\
-	$(OBJ)/arq1.o\
+	$(OBJ)/login.o\
 
 myapps: $(BIN)/main
 

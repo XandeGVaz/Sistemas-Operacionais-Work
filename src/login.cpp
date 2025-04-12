@@ -1,40 +1,33 @@
-#include "arq1.hpp"
+#include "login.hpp"
 
-std::string catchPlayerName(){
+std::string catchPlayerName(sf::RenderWindow &window){
 
     // Variáveis para captura do nome do jogador
     std::string playerName;
-  
-    // Título de exibição da janela para usuário digitar o nome
-    sf::Text title;
-    title.setString("NOME DO Jogador");
-    title.setFillColor(sf::Color::White);
-    title.setCharacterSize(48);
-    title.setPosition(500, 200);
+
+    // Imagem de fundo da tela de captura de nome
+    sf::Image image;
+    if(! image.loadFromFile("./assets/images/catchPlayerName.png"))
+      std::cout << "Erro na leitura de imagem de captura de nome" << std::endl;
+    
+    // Textura do fundo da tela de jogo
+    sf::Texture texture;
+    texture.loadFromImage(image);
+
+    // Sprite da tela de jogo
+    sf::Sprite sprite;
+    sprite.setTexture(texture);
   
     // Texto de exibição do nome do jogador até então digitado
     sf::Text textName;
     textName.setFillColor(sf::Color::White);
-    textName.setCharacterSize(24);
-    textName.setPosition(SCREEN_WIDTH / 2, 350); // posição do texto na tela
-  
-    // Retânqulo para exibição do nome do jogador
-    sf::RectangleShape rect;
-    rect.setFillColor(sf::Color::Black);
-    rect.setOutlineColor(sf::Color::White);
-    rect.setOutlineThickness(2);
-    rect.setSize(sf::Vector2f(400, 50));
-    rect.setPosition(450, 330);
+    textName.setCharacterSize(32);
+    textName.setPosition(SCREEN_WIDTH / 2 + 20, 340); // posição do texto na tela
   
     // Configuração da fonte do texto
     sf::Font font;
-    font.loadFromFile("./assets/fonts/font.otf");
+    font.loadFromFile("./assets/fonts/boorsok.otf");
     textName.setFont(font);
-    title.setFont(font);
-  
-    // Criação da janeal para captura do nome do jogador
-    sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "LOGIN", sf::Style::Titlebar);
-    window.setFramerateLimit(FRAME_RATE); 
   
     // Variável para verificação de eventos
     sf::Event event;
@@ -57,10 +50,10 @@ std::string catchPlayerName(){
           if(event.text.unicode == '\b' && !playerName.empty())
             playerName.pop_back();
           
-          /* Se o caractere adicionado for alfanumérico, diferente de espaço (" ") e 
+          /* Se o caractere adicionado for alfanumérico, e 
           *a string for menor que 30 caracteres, adiciona o caractere à string
           */
-          else if(event.text.unicode < 128 &&  event.text.unicode != 32 && playerName.size() < 30){
+          else if(event.text.unicode < 128 && playerName.size() < 27){
               playerName += event.text.unicode;
           }
         }
@@ -76,11 +69,10 @@ std::string catchPlayerName(){
       // Centralziação de texto na tela
       sf::FloatRect textNameRect = textName.getLocalBounds(); // armazenar as dimensões do texto
       textName.setOrigin(textNameRect.width/2, textNameRect.height/2); // seta origem no centro do texto
-  
-  
+      
+        
       window.clear();       // Limpa a tela para atualização do nome digitado
-      window.draw(title);   // Desenha o título da janela
-      window.draw(rect);    // Desenha o retângulo para exibição do nome
+      window.draw(sprite);  // Desenha background da tela (imagem de captura de nome de jogador)
       window.draw(textName);// Desenha o nome digitado na tela
       window.display();     // Atualiza a tela
   
