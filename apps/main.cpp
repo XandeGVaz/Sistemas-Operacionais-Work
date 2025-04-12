@@ -10,11 +10,13 @@ sf::RenderWindow Window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "LOGIN", /*s
 std::string PlayerName;
 
 // Score do jogador
-int Score;
+int Score = 0;
 
 // Fonte de escrita
 sf::Font Font;
 
+
+/*=============================== Programa Princippal ======================================================*/
 
 int main(){
     
