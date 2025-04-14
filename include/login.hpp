@@ -5,26 +5,7 @@
 
 
 std::string catchPlayerName(sf::RenderWindow &window, sf::Font &Font);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+bool playGame(sf::RenderWindow &window);
 
 
 #endif

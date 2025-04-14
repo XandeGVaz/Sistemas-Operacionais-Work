@@ -28,5 +28,11 @@ int main(){
 
     // Login do Jogador
     PlayerName = catchPlayerName(Window, Font);
+    if(!playGame(Window)){ // Caso não deseje jogar, fecha janela do programa
+        Window.close();
+        return 0;
+    }
+
+
     return 0;
 }
