@@ -1,5 +1,9 @@
 #include "login.hpp"
 
+// Função de captura de nome do jogador
+//    Parâmetros: - window : janela de jgo
+//                - font : fonte de texto utilizada
+//    Saída: string c++ que contêm nome do jogador
 std::string catchPlayerName(sf::RenderWindow &window, sf::Font &font){
 
     // Variáveis para captura do nome do jogador
@@ -76,6 +80,9 @@ std::string catchPlayerName(sf::RenderWindow &window, sf::Font &font){
     }
 }
 
+// Função do menu de seleção
+//    Parâmetros: - window : janela de jogo
+//    Saída: booleano true caso o usuário tenha escolhido jogar o game || false caso contrário
 bool playGame(sf::RenderWindow &window){
 
   // Estado de decisão
