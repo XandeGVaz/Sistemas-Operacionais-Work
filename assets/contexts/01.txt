@@ -1,4 +1,4 @@
-$Contexto 01$
+$Contexto01$
 Computadores são máquinas complexas.
 As duas grandes partes de um computador são o Hardware e o Software.
 O Hardware é a parte física da máquina, um circuito eletrônico cujo comportamento é ditado por corrente elétrica e marcações magnéticas (como no disco rígido).
@@ -6,16 +6,3 @@ Exemplos de partes do hardware são: Disco rígido, processador, memória. Em ou
 O Software é a parte abstrada, escrita por um programador: um conjunto de instruções fornecidas para que o computador funcione corretamente ou execute tarefas.
 O Software é traduzido em sinais digitais, os quais operam na parte física do computador (Hardware). 
 Exemplos de Software: bloco de notas, agenda, League of Legends, sistema operacional (Windows).
-$Texto pergunta$
-Dentre as alternativas, qual desses é um software?
-$A$
-Disco rígido (HD).
-$B$
-Memória.
-$C$
-Microsoft Word.
-$D$
-Placa mãe.
-#
-
-
