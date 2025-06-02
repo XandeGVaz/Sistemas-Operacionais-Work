@@ -1,5 +1,5 @@
-#ifndef ARQ1_HPP
-#define ARQ1_HPP
+#ifndef LOGIN_HPP
+#define LOGIN_HPP
 
 #include "globals.hpp"
 
