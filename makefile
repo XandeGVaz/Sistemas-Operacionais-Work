@@ -10,6 +10,7 @@ all: clean libed myapps
 
 libed:\
 	$(OBJ)/login.o\
+	$(OBJ)/exit.o\
 
 myapps: $(BIN)/main
 

@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "globals.hpp"
 #include "login.hpp"
+#include "exit.hpp"
 
 /*================================ Variáveis Globais ======================================================*/
 // Tela de jogo
@@ -33,6 +34,16 @@ int main(){
         return 0;
     }
 
+    // Loop de jogo
+    while(1){
+        
+        // Funções referentes às perguntas do quis
+    
+        if(exitGame(Window)){
+            break; // Sai do loop de jogo e o programa termina
+        }
+    
+    }
 
     return 0;
 }
