@@ -39,10 +39,12 @@ int main(){
         
         // Funções referentes às perguntas do quis
     
-        if(exitGame(Window)){
+        if(exitGame(Window, Score, PlayerName, Font)){
             break; // Sai do loop de jogo e o programa termina
         }
-    
+        
+        // Zera score do jogador para que ele jogue novamente
+        Score = 0;
     }
 
     return 0;
