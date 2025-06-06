@@ -6,7 +6,7 @@
 std::string getContextTitle(std::string fileName);
 std::string getContextBody(std::string fileName);
 
-std::string getQuestionBody(std::string fileName);
-std::string getAlternative(std::string filename, int alternative);
+//std::string getQuestionBody(std::string fileName);
+//std::string getAlternative(std::string filename, int alternative);
 
 #endif

@@ -3,7 +3,11 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
+#include <fstream>
+#include <algorithm>
 #include <iostream>
+#include <vector>
+#include <sstream>
 
 #define SCREEN_HEIGHT 768
 #define SCREEN_WIDTH 1366
