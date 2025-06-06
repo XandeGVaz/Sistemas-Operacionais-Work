@@ -11,6 +11,8 @@ all: clean libed myapps
 libed:\
 	$(OBJ)/login.o\
 	$(OBJ)/exit.o\
+	$(OBJ)/fileManipulation.o\
+	$(OBJ)/gameFlux.o\
 
 myapps: $(BIN)/main
 

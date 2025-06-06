@@ -2,6 +2,8 @@
 #include "globals.hpp"
 #include "login.hpp"
 #include "exit.hpp"
+#include "fileManipulation.hpp"
+#include "gameFlux.hpp"
 
 /*================================ Variáveis Globais ======================================================*/
 // Tela de jogo

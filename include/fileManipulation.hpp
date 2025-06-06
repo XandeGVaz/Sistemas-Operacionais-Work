@@ -1,5 +1,5 @@
-#ifndef ARQ3_HPP
-#define ARQ3_HPP
+#ifndef FILE_MANIPULATION_HPP
+#define FILE_MANIPULATION_HPP
 
 #include "globals.hpp"
 

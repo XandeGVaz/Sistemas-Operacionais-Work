@@ -1,5 +1,5 @@
-#ifndef SCORE_H
-#define SCORE_H
+#ifndef EXIT_H
+#define EXIT_H
 
 #include "globals.hpp"
 

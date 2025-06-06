@@ -1,5 +1,5 @@
-#ifndef ARQ2_HPP
-#define ARQ2_HPP
+#ifndef GAME_FLUX_HPP
+#define GAME_FLUX_HPP
 
 #include "globals.hpp"
 #include "fileManipulation.hpp"
