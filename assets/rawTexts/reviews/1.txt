@@ -1,0 +1,5 @@
+$Resposta01$
+Microsoft Word é um exemplo de software porque se trata de um programa de computador desenvolvido para executar tarefas específicas, como edição de textos, criação de documentos e formatação de arquivos. 
+Diferente do hardware, que corresponde às partes físicas do computador, o software é a parte lógica, composta por instruções e códigos que dizem ao hardware o que fazer.
+Enquanto itens como disco rígido, memória e placa mãe são componentes físicos (hardware), o Microsoft Word é um conjunto de instruções digitais que só existe dentro do computador e depende do hardware para funcionar.
+Portanto, entre as alternativas apresentadas, apenas o Microsoft Word é um software, pois é um programa criado para ser utilizado pelo usuário, ao contrário dos outros itens, que são peças físicas do computador.

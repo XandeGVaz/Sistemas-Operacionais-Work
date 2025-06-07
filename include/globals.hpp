@@ -8,11 +8,13 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include <locale>
+#include <codecvt>
 
 #define SCREEN_HEIGHT 768
 #define SCREEN_WIDTH 1366
 #define FRAME_RATE 60
 
-#define N_QUESTIONS 10
+#define N_QUESTIONS 1
 
 #endif

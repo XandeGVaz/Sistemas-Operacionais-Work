@@ -46,6 +46,19 @@ std::string insertNewlineEveryNChars(std::string input, size_t maxCharsPerLine) 
     return result;
 }
 
+
+/* Conversão de string normal para wide string (wstring)
+    Parâmetro:
+        str: string no formato UTF-8 (std::string) a ser convertida
+    Saída:
+        wstring: string convertida para formato largo (std::wstring)
+        , adequada para exibição de caracteres espciais
+*/
+std::wstring convertToWstring(std::string str){
+    std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+    return converter.from_bytes(str);
+}
+
 /*====================== Funções principais====================*/
 /* Obtenção do título do contexto
     Parâmetro: 
@@ -53,7 +66,7 @@ std::string insertNewlineEveryNChars(std::string input, size_t maxCharsPerLine) 
     Saída:
         title: string cujo conteúdo é o título do contexto 
 */
-std::string getContextTitle(std::string fileName){
+std::wstring getContextTitle(std::string fileName){
 
     // Obtenção do título do arquivo
     std::string title;
@@ -62,14 +75,12 @@ std::string getContextTitle(std::string fileName){
     std::fstream arq(fileName);
     if(!arq.is_open()){
         std::cout << "Erro na obtenção do arquivo" + fileName << std::endl;
-       return "FILE_ERROR";
+       return L"FILE_ERROR";
        arq.close();
     }
 
     // Leitura do título
     std::getline(arq, title);
-    
-    std::cout << title[0] << std::endl;
 
     // Fecha arquivo
     arq.close();
@@ -77,10 +88,10 @@ std::string getContextTitle(std::string fileName){
     // Filtra caracteres $
     if(title[0] == '$'){
         title.erase(std::remove(title.begin(), title.end(), '$'), title.end());
-        return title;
+        return convertToWstring(title);
     }
 
-    return "FILE_ERROR";
+    return L"FILE_ERROR";
 }
 
 /* Obtenção do corpo do contexto
@@ -89,7 +100,7 @@ std::string getContextTitle(std::string fileName){
     Saída:
         body: string cujo conteúdo é o corpo do contexto 
 */
-std::string getContextBody(std::string fileName){
+std::wstring getContextBody(std::string fileName){
     // Obtenção do título do arquivo
     std::string aux_str;
     std::string Body;
@@ -99,7 +110,7 @@ std::string getContextBody(std::string fileName){
     std::fstream arq(fileName);
     if(!arq.is_open()){
         arq.close();
-        return "FILE_ERROR";
+        return L"FILE_ERROR";
     }
     
     // Leitura do título
@@ -108,7 +119,7 @@ std::string getContextBody(std::string fileName){
     // Verifica consistência do título
     if(aux_str[0] != '$'){
         arq.close();
-        return "FILE_ERROR";
+        return L"FILE_ERROR";
     }
 
     // Leitura do corpo de texto (até o final do arquivo)
@@ -118,6 +129,6 @@ std::string getContextBody(std::string fileName){
     //Fecha arquivo 
     arq.close();
 
-    // Retorna vector com linhas do corpo de texto
-    return insertNewlineEveryNChars(Body, 1500/25);
+    // Retorna corpo de texto com quebras de linha
+    return convertToWstring(insertNewlineEveryNChars(Body, 1500/25));
 }

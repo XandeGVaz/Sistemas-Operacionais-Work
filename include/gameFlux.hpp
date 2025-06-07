@@ -4,9 +4,17 @@
 #include "globals.hpp"
 #include "fileManipulation.hpp"
 
-//bool gameFlux(sf::RenderWindow &window, sf::Font &font, int* answer, int* expected);
+typedef enum{
+    ERROR = 0U,
+    A ,
+    B ,
+    C ,
+    D
+}Answer_t;
+
+int gameFlux(sf::RenderWindow &window, sf::Font &font, int* score, Answer_t* expected);
 bool summonContext(sf::RenderWindow &window, sf::Font &font, int n);
+bool summonReview(sf::RenderWindow &window, sf::Font &font, int n, bool correct);
 //bool summonQuestion(sf::RenderWindow &window, sf::Font &font, int n, int* answer);
-//bool summonReview(sf::RenderWindow &window, sf::Font &font, int n, int performance);
 
 #endif

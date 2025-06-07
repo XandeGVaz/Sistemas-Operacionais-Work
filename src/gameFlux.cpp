@@ -6,40 +6,51 @@
 //  Retorno:    - 0: Alguma função de invocação apresentou erro. Mensagens de erro serão responsabilidade das respectivas funções.
 //              - 1: Funcionamento esperado.
 
-// int gameFlux(sf::RenderWindow &window, sf::Font &font, int* answer, int* expected) {
-//     // Inicialização do vetor de respostas
-//     answer = new int[N_QUESTIONS];
+int gameFlux(sf::RenderWindow &window, sf::Font &font, int* score, Answer_t* expected) {
 
-//     // Variaveis de controle do jogo
-//     int performance, action, state = 1;
+    // Variaveis de controle do jogo
+    int state = 1;
+    Answer_t answer;
+    bool correct = false;
 
-//     // Loop de jogo
-//     while(state <= N_QUESTIONS) {
-//         // Invoca a tela de contexto e lida com retornos de erro.
-//         if(!summonContext(window, font, state)) return 0;
+    // Loop de jogo
+    while(state <= N_QUESTIONS) {
 
-//         // Invoca a tela de pergunta e armazena a ação do usuario
-//         action = summonQuestion(window, font, state, answer);
+        // Invoca a tela de contexto e lida com retornos de erro.
+        if(!summonContext(window, font, state)){
+            std::cout << "Erro na exibição de contexto de questão" << std::endl;
+            return 0;
+        }
+        
+        // Invoca a tela de pergunta e armazena a ação do usuario
+        //action = summonQuestion(window, font, state, answer);
+        answer = A;
 
-//         // Delimita as acoes do usuario
-//         if(!action) return 0;
+        // Delimita as acoes do usuario
+        if(answer == ERROR){
+            std::cout << "Erro na exibição de questão" << std::endl;
+            return 0;
+        }
 
-//         // Usuario deseja avancar
-//         else if(action == 1) {
+        // Compara resposta do usuario com o esperado
+        if(answer == expected[state-1]) {
+            (*score)++;
+            correct = true;
+        }
 
-//             // Compara resposta do usuario com o esperado
-//             if(answer[state] == expected[state]) performance = 1;
-//             else performance = 0;
+        if(!summonReview(window, font, state, correct)){
+            std::cout << "Erro na exibição de review de questão" << std::endl;
+            return 0;
+        }
+        
+        // Avança o fluxo de jogo para novo estado.
+        state++;
+        correct = false;
+    }
 
-//             // Invoca tela de review e lida com retornos de erro.
-//             if(!summonReview(window, font, state, performance)) return 0;
-
-//             // Avança o fluxo de jogo para novo estado.
-//             state++;
-//         }
-//     }
-//     return 1;
-// }
+    // Função executada com sucesso
+    return 1;
+}
 
 // Função de invocação da tela de contexto.
 //  Parâmetros: - n: variável comum à outras funções de invocação. Rege o estado do jogo.
@@ -77,16 +88,14 @@ bool summonContext(sf::RenderWindow &window, sf::Font &font, int n) {
     std::string file_path = path + str_number + ".txt";
 
     // Obtençaõ da string correspondente ao titulo do contexto
-    std::string title = getContextTitle(file_path);
-    std::cout << title << std::endl;
-    if(!title.compare("FILE_ERROR")){
+    std::wstring title = getContextTitle(file_path);
+    if(!title.compare(L"FILE_ERROR")){
         return false;
     }
 
     // Obtenção da string correspondente ao corpo do contexto
-    std::string body = getContextBody(file_path);
-    std::cout << body << std::endl;
-    if(!body.compare("FILE_ERROR")){
+    std::wstring body = getContextBody(file_path);
+    if(!body.compare(L"FILE_ERROR")){
         return false;
     }
 
@@ -104,6 +113,84 @@ bool summonContext(sf::RenderWindow &window, sf::Font &font, int n) {
      
     // Desenha título do contexto na tela
     window.draw(sfTextTitle);
+
+    // Texto de exibição do corpo do contexto
+    sf::Text sfTextBody;
+    sfTextBody.setFillColor(sf::Color::Black);
+    sfTextBody.setCharacterSize(25);
+    sfTextBody.setFont(font);
+    sfTextBody.setString(body);
+    sfTextBody.setPosition(230, 250);
+
+    // Desenha corpo do contexto na tela
+    window.draw(sfTextBody);
+
+    // Loop de espera de entrada
+    while(1) {
+        
+        while(window.pollEvent(event)) {
+            
+            // Caso o evento seja de fechamento da janela, fecha a janela
+            if(event.type == sf::Event::Closed) {
+                window.close();
+                return false;
+            }
+            
+            // Caso o usuário aperte enter, ele é direcionado para a próxima tela de jogo
+            if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter){
+                return true;
+            }
+        }
+
+        // Exibição da tela para o usuário
+        window.display();
+    }
+}
+
+bool summonReview(sf::RenderWindow &window, sf::Font &font, int n, bool correct){
+
+    //Paths
+    std::string pathReview = "./assets/rawTexts/reviews/";
+    std::string pathImage;
+
+    // Definição do caminho da imagem
+    if(correct){
+        pathImage = "./assets/images/game/review/baseCorrectReview.png";
+    } else{
+        pathImage = "./assets/images/game/review/baseIncorrectReview.png";
+    }
+
+    // Imagem de fundo da tela de contexto base
+    sf::Image image;
+    if(! image.loadFromFile(pathImage)) {
+      std::cout << "Erro na leitura de imagem base de review." << std::endl;
+      return false;
+    }
+    
+    // Textura do fundo da tela de jogo
+    sf::Texture texture;
+    texture.loadFromImage(image);
+
+    // Sprite da tela de jogo
+    sf::Sprite sprite;
+    sprite.setTexture(texture);
+    
+    // Limpa a tela e desenha a imagem base de fundo
+    window.clear();       
+    window.draw(sprite);  
+
+    // Variável para verificação de eventos
+    sf::Event event;
+
+    // Nome do arquivo de texto
+    std::string str_number = std::to_string(n);
+    std::string file_path = pathReview + str_number + ".txt";
+
+    // Obtenção da string correspondente ao corpo do contexto
+    std::wstring body = getContextBody(file_path);
+    if(!body.compare(L"FILE_ERROR")){
+        return false;
+    }
 
     // Texto de exibição do corpo do contexto
     sf::Text sfTextBody;

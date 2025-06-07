@@ -1,8 +1,8 @@
 $Computadores$
-Computadores sao maquinas complexas.
-As duas grandes partes de um computador sao o Hardware e o Software.
-O Hardware e a parte fisica da maquina, um circuito eletronico cujo comportamento e ditado por corrente eletrica e marcacoes magneticas (como no disco rigido).
-Exemplos de partes do hardware sao: Disco rigido, processador, memoria. Em outras palavras, tudo o que voce pode tocar.
-O Software e a parte abstrada, escrita por um programador: um conjunto de instrucoes fornecidas para que o computador funcione corretamente ou execute tarefas.
-O Software e traduzido em sinais digitais, os quais operam na parte fisica do computador (Hardware).
+Computadores são máquinas complexas.
+As duas grandes partes de um computador são o Hardware e o Software.
+O Hardware é a parte física da máquina, um circuito eletrônico cujo comportamento é ditado por corrente elétrica e marcações magnéticas (como no disco rígido).
+Exemplos de partes do hardware são: Disco rígido, processador, memória. Em outras palavras, tudo o que você pode tocar.
+O Software é a parte abstrata, escrita por um programador: um conjunto de instruções fornecidas para que o computador funcione corretamente ou execute tarefas.
+O Software é traduzido em sinais digitais, os quais operam na parte física do computador (Hardware).
 Exemplos de Software: bloco de notas, agenda, League of Legends, sistema operacional (Windows).

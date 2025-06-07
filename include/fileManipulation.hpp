@@ -3,8 +3,8 @@
 
 #include "globals.hpp"
 
-std::string getContextTitle(std::string fileName);
-std::string getContextBody(std::string fileName);
+std::wstring getContextTitle(std::string fileName);
+std::wstring getContextBody(std::string fileName);
 
 //std::string getQuestionBody(std::string fileName);
 //std::string getAlternative(std::string filename, int alternative);

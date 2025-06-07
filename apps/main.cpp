@@ -14,10 +14,11 @@ std::string PlayerName;
 
 // Score do jogador
 int Score = 0;
+Answer_t Expected [] = {A, B, C, D, A, B, C, D, A, B};
 
 // Fonte de escrita
 sf::Font PrincipalFont;
-sf::Font DejaVuSans;
+sf::Font DejaVuSansFont;
 
 
 /*=============================== Programa Princippal ======================================================*/
@@ -29,7 +30,7 @@ int main(){
     
     // Carregamento da fonte principal de texto
     PrincipalFont.loadFromFile("./assets/fonts/font.otf");
-    DejaVuSans.loadFromFile("./assets/fonts/NotoSans-Bold.ttf");
+    DejaVuSansFont.loadFromFile("./assets/fonts/NotoSans-Bold.ttf");
 
     // Login do Jogador
     PlayerName = catchPlayerName(Window, PrincipalFont);
@@ -42,10 +43,11 @@ int main(){
     while(1){
         
         // Funções referentes às perguntas do quis
-        if(!summonContext(Window, DejaVuSans, 1)){
+        if(!gameFlux(Window, DejaVuSansFont, &Score, Expected)){
             break;
         }
 
+        // Verifica se o player deseja sair
         if(exitGame(Window, Score, PlayerName, PrincipalFont)){
             break; // Sai do loop de jogo e o programa termina
         }
