@@ -6,7 +6,7 @@
 std::wstring getContextTitle(std::string fileName);
 std::wstring getContextBody(std::string fileName);
 
-//std::string getQuestionBody(std::string fileName);
-//std::string getAlternative(std::string filename, int alternative);
+std::wstring getQuestionBody(std::string fileName);
+std::wstring getAlternative(std::string fileName, char alternative);
 
 #endif

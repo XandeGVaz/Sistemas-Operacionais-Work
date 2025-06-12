@@ -23,9 +23,11 @@ int gameFlux(sf::RenderWindow &window, sf::Font &font, int* score, Answer_t* exp
         }
         
         // Invoca a tela de pergunta e armazena a ação do usuario
-        //action = summonQuestion(window, font, state, answer);
-        answer = A;
-
+        if(!summonQuestion(window, font, state, &answer)){
+            std::cout << "Erro na exibição das alternativas" << std::endl;
+            return 0;
+        }
+        
         // Delimita as acoes do usuario
         if(answer == ERROR){
             std::cout << "Erro na exibição de questão" << std::endl;
@@ -125,6 +127,9 @@ bool summonContext(sf::RenderWindow &window, sf::Font &font, int n) {
     // Desenha corpo do contexto na tela
     window.draw(sfTextBody);
 
+    // Exibição da tela para o usuário
+    window.display();
+
     // Loop de espera de entrada
     while(1) {
         
@@ -141,9 +146,6 @@ bool summonContext(sf::RenderWindow &window, sf::Font &font, int n) {
                 return true;
             }
         }
-
-        // Exibição da tela para o usuário
-        window.display();
     }
 }
 
@@ -203,6 +205,9 @@ bool summonReview(sf::RenderWindow &window, sf::Font &font, int n, bool correct)
     // Desenha corpo do contexto na tela
     window.draw(sfTextBody);
 
+    // Exibição da tela para o usuário
+    window.display();
+
     // Loop de espera de entrada
     while(1) {
         
@@ -219,9 +224,194 @@ bool summonReview(sf::RenderWindow &window, sf::Font &font, int n, bool correct)
                 return true;
             }
         }
+    }
+}
 
-        // Exibição da tela para o usuário
-        window.display();
+
+bool summonQuestion(sf::RenderWindow &window, sf::Font &font, int n, Answer_t* answer){
+    //Path
+    std::string path = "./assets/rawTexts/questions/";
+
+    // Imagem de fundo da tela de pergunta
+    sf::Image image;
+    if(!image.loadFromFile("./assets/images/game/question/baseQuestion.png")) {
+      std::cout << "Erro na leitura de imagem de pergunta." << std::endl;
+      return false;
+    }
+
+    // Textura do fundo da tela de pergunta
+    sf::Texture texture;
+    texture.loadFromImage(image);
+
+    // Sprite da tela de pergunta
+    sf::Sprite sprite;
+    sprite.setTexture(texture);
+
+    // Centralização do sprite
+    sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
+    sprite.setPosition(window.getSize().x / 2, window.getSize().y / 2);
+    
+    // Limpa a tela e desenha a imagem base de fundo
+    window.clear();       
+    window.draw(sprite);  
+
+    // Variável para verificação de eventos
+    sf::Event event;
+
+   // Nome do arquivo de texto da pergunta
+    std::string str_number = std::to_string(n);
+    std::string file_path = path + str_number + ".txt";
+
+    // String correspondente ao titulo do contexto
+    std::string title = "Pergunta " + str_number + ":";
+
+    // Obtenção da string correspondente à pergunta
+    std::wstring body = getQuestionBody(file_path);
+    if(!body.compare(L"FILE_ERROR")){
+        return false;
+    }
+
+    // String de instruções
+    std::string instruction = "(Aperte a letra da alternativa no teclado.)";
+
+    // Obtenção das alternativas
+    std::wstring *alternatives = new std::wstring[4];
+
+    for(int i = 0; i < 4; i++){
+        alternatives[i] = getAlternative(file_path, 'A'+i);
+    }
+    
+    // Texto de exibição título do contexto
+    sf::Text sfTextTitle;
+    sfTextTitle.setFillColor(sf::Color::Black);
+    sfTextTitle.setCharacterSize(40);
+    sfTextTitle.setFont(font);
+    sfTextTitle.setString(title);
+
+    // Centralziação  e posicionamento do título na tela
+    sf::FloatRect sfTextTitleRect = sfTextTitle.getLocalBounds(); 
+    sfTextTitle.setOrigin(sfTextTitleRect.width/2, sfTextTitleRect.height/2); 
+    sfTextTitle.setPosition(SCREEN_WIDTH / 2 , 140);
+     
+    // Desenha título do contexto na tela
+    window.draw(sfTextTitle);
+
+    // Texto de exibição do corpo do contexto
+    sf::Text sfTextBody;
+    sfTextBody.setFillColor(sf::Color::Black);
+    sfTextBody.setCharacterSize(25);
+    sfTextBody.setFont(font);
+    sfTextBody.setString(body);
+
+    // Center the text
+    sf::FloatRect bodyRect = sfTextBody.getLocalBounds();
+    sfTextBody.setOrigin(bodyRect.left + bodyRect.width/2.0f, bodyRect.top + bodyRect.height/2.0f);
+    sfTextBody.setPosition(sf::Vector2f(window.getSize().x/2.0f, window.getSize().y/2.0f - 150));
+
+    // Desenha corpo do contexto na tela
+    window.draw(sfTextBody);
+
+    // Texto de exibição das instruções
+    sf::Text sfTextInstruct;
+    sfTextInstruct.setFillColor(sf::Color::Black);
+    sfTextInstruct.setCharacterSize(20);
+    sfTextInstruct.setFont(font);
+    sfTextInstruct.setString(instruction);
+
+    // Center the text
+    sf::FloatRect instructRect = sfTextInstruct.getLocalBounds();
+    sfTextInstruct.setOrigin(instructRect.left + instructRect.width/2.0f, instructRect.top + instructRect.height/2.0f);
+    sfTextInstruct.setPosition(sf::Vector2f(window.getSize().x/2.0f, window.getSize().y/2.0f + 300));
+
+    // Desenha as instruções na tela
+    window.draw(sfTextInstruct);
+
+    // Alternativas
+    sf::Text *sfTextAlternative = new sf::Text[4];
+
+    // Local offsets
+    float refX = 340, refY = 340;
+    float localOff[4][2] = {{refX, refY},{refX+460, refY},{refX, refY+130},{refX+460, refY+130}};
+
+    for(int i = 0; i < 4; i++) {
+
+        // Texto das alternativas
+        sfTextAlternative[i].setFillColor(sf::Color::White);
+        sfTextAlternative[i].setCharacterSize(25);
+        sfTextAlternative[i].setFont(font);
+        sfTextAlternative[i].setString(alternatives[i]);
+        sfTextAlternative[i].setPosition(localOff[i][0], localOff[i][1]);
+
+        // Desenha a alternativa na tela
+        window.draw(sfTextAlternative[i]);
+    }
+
+    // Exibição da tela para o usuário
+    window.display();
+
+    bool choiceMade = false;
+    // Loop de espera de entrada
+    while(1) {
+        
+        while(window.pollEvent(event)) {
+            
+            // Caso o evento seja de fechamento da janela, fecha a janela
+            if(event.type == sf::Event::Closed) {
+                window.close();
+                return false;
+            }
+            
+            // Caso o usuário aperte enter, ele é direcionado para a próxima tela de jogo
+            if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter && choiceMade){
+                return true;
+            }
+
+            // Caso o usuário selecione uma alternativa
+            // Tenho noção que este condicional está feio, mas preciso garantir que o texto fique branco
+            // apenas quando uma das alternativas for escolhida. Ass.: Gabriel.
+            else if(event.type == sf::Event::KeyPressed && 
+                (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::B || 
+                event.key.code == sf::Keyboard::C || event.key.code == sf::Keyboard::D)) {
+
+                // Deixa todos os textos na cor original
+                for(int j = 0; j < 4; j++){
+                    sfTextAlternative[j].setFillColor(sf::Color::White);
+                }
+
+                if(event.key.code == sf::Keyboard::A) {
+                    sfTextAlternative[0].setFillColor(sf::Color::Yellow);
+                    *answer = A;
+                    choiceMade = true;
+                }
+
+                else if(event.key.code == sf::Keyboard::B) {
+                    sfTextAlternative[1].setFillColor(sf::Color::Yellow);
+                    *answer = B;
+                    choiceMade = true;
+                }
+
+                else if(event.key.code == sf::Keyboard::C) {
+                    sfTextAlternative[2].setFillColor(sf::Color::Yellow);                    
+                    *answer = C;
+                    choiceMade = true;
+                }
+
+                else if(event.key.code == sf::Keyboard::D) {
+                    sfTextAlternative[3].setFillColor(sf::Color::Yellow);
+                    *answer = D;
+                    choiceMade = true;
+                }
+            }
+            // Renderiza a tela novamente a cada interação
+            window.clear();
+            window.draw(sprite);
+            window.draw(sfTextTitle);
+            window.draw(sfTextBody);
+            window.draw(sfTextInstruct);
+            for(int i = 0; i < 4; i++) window.draw(sfTextAlternative[i]);
+            window.display();
+        }
+
     }
 }
 

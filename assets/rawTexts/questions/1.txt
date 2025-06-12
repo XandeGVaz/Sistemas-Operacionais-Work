@@ -1,4 +1,4 @@
-$Pergunta01$
+$Pergunta 01$
 Dentre as alternativas, qual desses é um software?
 $A$
 Disco rígido (HD).

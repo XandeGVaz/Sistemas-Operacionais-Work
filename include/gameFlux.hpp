@@ -15,6 +15,6 @@ typedef enum{
 int gameFlux(sf::RenderWindow &window, sf::Font &font, int* score, Answer_t* expected);
 bool summonContext(sf::RenderWindow &window, sf::Font &font, int n);
 bool summonReview(sf::RenderWindow &window, sf::Font &font, int n, bool correct);
-//bool summonQuestion(sf::RenderWindow &window, sf::Font &font, int n, int* answer);
+bool summonQuestion(sf::RenderWindow &window, sf::Font &font, int n, Answer_t* answer);
 
 #endif

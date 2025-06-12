@@ -132,3 +132,93 @@ std::wstring getContextBody(std::string fileName){
     // Retorna corpo de texto com quebras de linha
     return convertToWstring(insertNewlineEveryNChars(Body, 1500/25));
 }
+
+/* Obtenção da pergunta
+    Parâmetro: 
+        fileName: diretório do arquivo txt da pergunta/alternativas
+    Saída:
+        body: string cujo conteúdo é a pergunta
+*/
+std::wstring getQuestionBody(std::string fileName) {
+
+    std::string aux_str;
+    std::string Body;
+
+    // Abertura do arquivo para leitura
+    std::fstream arq(fileName);
+    if(!arq.is_open()){
+        arq.close();
+        return L"FILE_ERROR";
+    }
+
+    // Leitura do título
+    std::getline(arq, aux_str);
+
+    // Verifica consistência do título
+    if(aux_str[0] != '$'){
+        arq.close();
+        return L"FILE_ERROR";
+    }
+
+    // Leitura da pergunta
+    std::getline(arq, Body);
+
+    //Fecha arquivo 
+    arq.close();
+
+    // Retorna pergunta com quebras de linha
+    return convertToWstring(insertNewlineEveryNChars(Body, 1500/25));
+}
+
+/* Obtenção das alternativas
+    Parâmetro: 
+        fileName: diretório do arquivo txt da pergunta/alternativas
+        alternative: número da alternativa na ordem alfabética (a=1, b=2, ...)
+    Saída:
+        body: wstring cujo conteúdo é a alternativa escolhinda por 'alternative'
+*/
+std::wstring getAlternative(std::string fileName, char alternative) {
+
+    std::string aux_str, expected = "$";
+    std::string Body;
+
+    // String esperada
+    expected.append(1, alternative);
+    expected.append(1, '$');
+
+    // Abertura do arquivo para leitura
+    std::fstream arq(fileName);
+    if(!arq.is_open()){
+        arq.close();
+        return L"FILE_ERROR";
+    }
+
+    // Leitura do título
+    std::getline(arq, aux_str);
+
+    // Verifica consistência do título
+    if(aux_str[0] != '$'){
+        arq.close();
+        return L"FILE_ERROR";
+    }
+
+    // Busca a alternativa escolhida
+    while(aux_str != expected || arq.eof())
+        std::getline(arq, aux_str);
+
+    // Verifica se a alternativa foi encontrada
+    if(aux_str != expected ){
+        arq.close();
+        std::cout << "Alternativa nao foi encontrada no arquivo." << std::endl;
+        return L"FILE_ERROR";
+    }
+
+    // Caso o campo da alternativa tenha sido encontrado, lê a linha seguinte
+    std::getline(arq, aux_str);
+
+    //Fecha arquivo 
+    arq.close();
+
+    // Retorna a alternativa escolhida
+    return convertToWstring(aux_str);
+}
