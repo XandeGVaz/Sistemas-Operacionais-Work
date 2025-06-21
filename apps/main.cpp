@@ -14,7 +14,7 @@ std::string PlayerName;
 
 // Score do jogador
 int Score = 0;
-Answer_t Expected [] = {C, B, C, D, A, B, C, D, A, B};
+Answer_t Expected [] = {B, C, C, C, C, B, C, B, B, B, C, C};
 
 // Fonte de escrita
 sf::Font PrincipalFont;
