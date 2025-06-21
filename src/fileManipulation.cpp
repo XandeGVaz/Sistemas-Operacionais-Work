@@ -130,7 +130,7 @@ std::wstring getContextBody(std::string fileName){
     arq.close();
 
     // Retorna corpo de texto com quebras de linha
-    return convertToWstring(insertNewlineEveryNChars(Body, 1500/25));
+    return convertToWstring(insertNewlineEveryNChars(Body, SPACES_FOR_LINE_BREAK_CONTEXT));
 }
 
 /* Obtenção da pergunta
@@ -167,7 +167,7 @@ std::wstring getQuestionBody(std::string fileName) {
     arq.close();
 
     // Retorna pergunta com quebras de linha
-    return convertToWstring(insertNewlineEveryNChars(Body, 1500/25));
+    return convertToWstring(insertNewlineEveryNChars(Body, SPACES_FOR_LINE_BREAK_CONTEXT));
 }
 
 /* Obtenção das alternativas

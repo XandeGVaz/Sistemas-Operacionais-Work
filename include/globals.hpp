@@ -17,4 +17,6 @@
 
 #define N_QUESTIONS 12
 
+#define SPACES_FOR_LINE_BREAK_CONTEXT 55
+
 #endif
