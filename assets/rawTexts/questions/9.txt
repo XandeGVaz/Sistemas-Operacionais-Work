@@ -1,0 +1,11 @@
+$Pergunta 09$
+Qual é uma das funções do sistema operacional?
+$A$
+Desenhar a tela.
+$B$
+Gerenciar os recursos do computador entre os programas.
+$C$
+Atualizar o hardware automaticamente.
+$D$
+Reduzir a temperatura da CPU.
+#

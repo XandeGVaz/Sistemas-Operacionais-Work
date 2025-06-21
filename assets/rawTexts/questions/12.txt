@@ -1,0 +1,11 @@
+$Pergunta 12$
+O que significa garantir exclusão mútua?
+$A$
+Impedir que o sistema operacional funcione.
+$B$
+Garantir que dois programas rodem ao mesmo tempo.
+$C$
+Permitir que apenas uma thread acesse um recurso de cada vez.
+$D$
+Apagar os dados após o uso.
+#

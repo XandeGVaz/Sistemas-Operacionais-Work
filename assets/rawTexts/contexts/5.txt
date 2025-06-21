@@ -1,0 +1,4 @@
+$A CPU (Processador)$
+A CPU, ou Unidade Central de Processamento, é o componente que interpreta e executa instruções. Ela é conhecida como o "cérebro do computador" porque realiza os cálculos e toma decisões com base nos comandos recebidos do software.
+
+Quando você clica em um ícone para abrir um programa, é a CPU que interpreta essa ação e coordena os outros componentes para que o programa comece a funcionar.

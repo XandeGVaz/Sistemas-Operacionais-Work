@@ -1,0 +1,6 @@
+$Resposta10$
+A resposta correta é a letra B.
+
+O sistema operacional usa processos e threads para simular a multitarefa. Isso permite que as tarefas sejam alternadas de forma rápida, dando ao usuário a impressão de simultaneidade.
+
+Na próxima etapa, vamos entender como essas threads são coordenadas e como os semáforos ajudam a evitar conflitos entre tarefas concorrentes.

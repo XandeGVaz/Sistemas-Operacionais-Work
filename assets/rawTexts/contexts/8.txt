@@ -1,0 +1,2 @@
+$Sistema Operacional (SO)$
+O Sistema Operacional é o software mais importante do computador. Ele é responsável por traduzir os comandos do usuário em ações compreendidas pelo hardware. Ele também gerencia recursos como CPU, memória e dispositivos.

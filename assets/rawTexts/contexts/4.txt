@@ -1,0 +1,6 @@
+$Memória RAM e Armazenamento$
+O computador possui diferentes tipos de memória. As principais são:
+
+RAM (Memória de Acesso Aleatório): armazena informações temporárias enquanto o computador está ligado. É rápida, mas volátil, ou seja, perde tudo ao desligar o computador.
+
+HD (Disco Rígido) e SSD: armazenam dados permanentemente. Mesmo quando o computador é desligado, os dados continuam salvos.

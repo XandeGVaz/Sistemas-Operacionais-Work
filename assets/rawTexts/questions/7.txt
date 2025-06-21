@@ -1,0 +1,11 @@
+$Pergunta 07$
+Por que a interface gráfica se tornou tão popular?
+$A$
+Porque ela faz o computador funcionar mais rápido.
+$B$
+Porque é mais bonita.
+$C$
+Porque facilita a interação com o sistema sem precisar digitar comandos.
+$D$
+Porque substituiu a CPU.
+#

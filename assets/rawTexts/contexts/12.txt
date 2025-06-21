@@ -1,0 +1,2 @@
+$Exclusão Mútua com Semáforos$
+Imagine que duas pessoas tentam escrever ao mesmo tempo em uma lousa pequena. Provavelmente, elas vão se atrapalhar. O semáforo funciona como um aviso: “aguarde, outra pessoa está usando agora”. Só depois que uma termina, a outra pode usar.

@@ -1,0 +1,4 @@
+$Resposta06$
+A resposta correta é a letra B.
+
+O clique em um ícone gera um evento interpretado pelo sistema operacional, que então localiza o programa associado e dá início à sua execução. A imagem é apenas uma representação visual.

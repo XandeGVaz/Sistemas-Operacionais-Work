@@ -1,0 +1,11 @@
+$Pergunta 04$
+Qual dessas memórias perde todos os dados ao desligar o computador?
+$A$
+HD.
+$B$
+SSD.
+$C$
+RAM.
+$D$
+Pendrive.
+#

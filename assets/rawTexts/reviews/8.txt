@@ -1,0 +1,5 @@
+$Resposta08$
+A resposta correta é a letra B.
+
+Sem o sistema operacional, o computador não tem como entender os comandos do usuário nem gerenciar seus recursos. Ele é essencial para o funcionamento do sistema.
+

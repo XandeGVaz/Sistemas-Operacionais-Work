@@ -1,0 +1,5 @@
+$Resposta 12$
+A resposta correta é a letra C.
+
+Exclusão mútua é um conceito essencial em programação concorrente. Ela assegura que uma única thread ou processo possa acessar um recurso crítico por vez, evitando conflitos e garantindo o funcionamento correto dos programas.
+

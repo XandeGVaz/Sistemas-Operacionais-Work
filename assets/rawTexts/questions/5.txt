@@ -1,0 +1,11 @@
+$Pergunta 05$
+O que a CPU faz quando você abre um programa?
+$A$
+Apenas envia energia para a tela.
+$B$
+Manda um sinal direto para o HD.
+$C$
+Interpreta o código do programa e inicia sua execução.
+$D$
+Desliga os outros programas automaticamente.
+#

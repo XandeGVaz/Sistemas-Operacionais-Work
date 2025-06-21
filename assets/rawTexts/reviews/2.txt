@@ -1,0 +1,6 @@
+$Resposta02$
+A resposta correta é a letra C.
+
+O Microsoft Word é um exemplo de software porque se trata de um programa criado para realizar tarefas específicas, como digitação, edição de textos, formatação de documentos, entre outros. Ele é composto por linhas de código escritas por programadores, que instruem o computador sobre como agir quando o usuário interage com o programa.
+
+Os demais itens mencionados nas alternativas (HD, RAM e placa-mãe) são todos componentes físicos, ou seja, fazem parte do hardware do computador.

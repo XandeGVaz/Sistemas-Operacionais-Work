@@ -1,0 +1,4 @@
+$Resposta 11$
+A resposta correta é a letra C.
+
+Semáforos são mecanismos que impedem que duas ou mais threads usem o mesmo recurso ao mesmo tempo, o que poderia causar resultados errados ou falhas. Eles garantem que o acesso aos dados seja feito de forma segura e ordenada.

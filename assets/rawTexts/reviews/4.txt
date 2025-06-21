@@ -1,0 +1,4 @@
+$Resposta04$
+A resposta correta é a letra C.
+
+A memória RAM é usada pelo sistema operacional e pelos programas para armazenar dados temporários durante a execução. Ela é muito rápida, mas todo o seu conteúdo é perdido quando o computador é desligado. Já o HD, SSD e pendrive são memórias permanentes.

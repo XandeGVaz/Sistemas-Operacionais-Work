@@ -1,0 +1,4 @@
+$Interface Gráfica$
+A maioria das pessoas interage com o computador por meio de uma interface gráfica: ícones, janelas, botões e menus. Mas por trás dessa "tela bonita", existe uma série de instruções e comandos executados em nível de sistema.
+
+Essas interfaces são desenhadas para facilitar o uso do computador, escondendo comandos complexos por trás de cliques.

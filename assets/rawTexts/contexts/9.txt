@@ -1,0 +1,2 @@
+$Gerenciamento de Recursos$
+Quando vários programas estão abertos, é o SO que decide qual usa o processador, quanta memória é atribuída, qual dispositivo pode ser acessado, etc.

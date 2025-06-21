@@ -1,13 +1,13 @@
 $Pergunta 01$
-Dentre as alternativas, qual desses é um software?
+O computador pode tomar decisões sozinho?
 $A$
-Disco rígido (HD).
+Sim, ele pensa como um humano.
 $B$
-Memória.
+Não, ele segue instruções.
 $C$
-Microsoft Word.
+Depende do sistema operacional.
 $D$
-Placa mãe.
+Ele escolhe com base na experiência passada.
 #
 
 

@@ -1,0 +1,11 @@
+$Pergunta 10$
+Quando vários programas ou tarefas rodam ao mesmo tempo, o que o SO faz?
+$A$
+Roda tudo exatamente ao mesmo tempo, fisicamente.
+$B$
+Cria processos e threads para organizar a execução.
+$C$
+Trava o sistema.
+$D$
+Escolhe apenas um e ignora o resto.
+#

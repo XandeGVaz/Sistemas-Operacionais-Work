@@ -1,0 +1,2 @@
+$Linha de Comando$
+Antes das interfaces gráficas, os usuários se comunicavam com o computador através de linhas de comando: digitavam manualmente cada instrução. Ainda hoje, a linha de comando é usada por profissionais para tarefas avançadas.

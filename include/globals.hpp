@@ -15,6 +15,6 @@
 #define SCREEN_WIDTH 1366
 #define FRAME_RATE 60
 
-#define N_QUESTIONS 1
+#define N_QUESTIONS 12
 
 #endif

@@ -1,0 +1,11 @@
+$Pergunta 03$
+Qual é a linguagem que o computador utiliza para executar seus processos internos?
+$A$
+Português.
+$B$
+Inglês.
+$C$
+Binária.
+$D$
+Morse.
+#

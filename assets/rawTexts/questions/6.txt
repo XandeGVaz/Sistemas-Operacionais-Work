@@ -1,0 +1,11 @@
+$Pergunta 06$
+Quando você clica em um ícone na interface gráfica, o que acontece?
+$A$
+O programa é executado diretamente pela imagem do ícone.
+$B$
+O sistema operacional interpreta o clique e inicia a execução do programa.
+$C$
+O monitor envia um comando ao mouse.
+$D$
+A imagem do ícone se transforma no código do programa.
+#

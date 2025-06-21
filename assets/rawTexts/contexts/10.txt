@@ -1,0 +1,2 @@
+$Introdução a Threads e Processos$
+Quando você abre um programa, o SO cria um processo. Dentro de um processo, podem existir threads, que são como "mini tarefas" que dividem o trabalho. Isso permite que diferentes partes de um programa sejam executadas simultaneamente.

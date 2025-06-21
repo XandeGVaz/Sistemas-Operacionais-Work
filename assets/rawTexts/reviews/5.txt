@@ -1,0 +1,4 @@
+$Resposta05$
+A resposta correta é a letra C.
+
+A CPU é quem lê os comandos que fazem parte do programa e coordena os demais componentes do sistema (como a memória, o disco e a interface gráfica) para que tudo funcione. Sem a CPU, o computador não conseguiria realizar nenhuma tarefa.

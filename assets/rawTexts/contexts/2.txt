@@ -1,0 +1,8 @@
+$Hardware e Software$
+As duas grandes partes que compõem um computador são o Hardware e o Software.
+
+Hardware é a parte física do computador: são os componentes que você pode ver e tocar, como a placa-mãe, processador (CPU), memória RAM, disco rígido (HD), SSD, monitor, teclado e mouse. Eles são feitos de materiais eletrônicos e reagem a sinais elétricos.
+
+Software é a parte lógica: é o conjunto de instruções (códigos) que dizem ao hardware o que fazer. Programas de computador, jogos, navegadores de internet e sistemas operacionais são exemplos de software.
+
+Um não funciona sem o outro. O hardware precisa de comandos para agir, e o software precisa do hardware para ser executado.

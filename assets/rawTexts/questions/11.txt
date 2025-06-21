@@ -1,0 +1,11 @@
+$Pergunta 11$
+Por que os semáforos são importantes em programas com múltiplas threads?
+$A$
+Para deixar os programas mais bonitos.
+$B$
+Para controlar o tempo de cada thread.
+$C$
+Para garantir que apenas uma thread acesse um recurso de cada vez.
+$D$
+Para desligar o computador quando terminar.
+#

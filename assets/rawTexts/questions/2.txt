@@ -1,0 +1,11 @@
+$Pergunta 02$
+Dentre as alternativas, qual desses é um software?
+$A$
+Disco rígido (HD).
+$B$
+Memória RAM.
+$C$
+Microsoft Word.
+$D$
+Placa-mãe.
+#

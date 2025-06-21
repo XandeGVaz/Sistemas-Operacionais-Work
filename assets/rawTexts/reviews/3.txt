@@ -1,0 +1,6 @@
+$Resposta03$
+A resposta correta é a letra C.
+
+A linguagem binária é a base do funcionamento de todos os computadores modernos. Cada 0 e 1 representa um sinal elétrico que o hardware consegue entender. Com uma sequência enorme desses números, é possível codificar qualquer instrução ou dado.
+
+As linguagens humanas, como português e inglês, precisam ser traduzidas para o binário para que o computador consiga agir.

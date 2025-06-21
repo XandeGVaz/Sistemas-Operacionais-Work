@@ -1,0 +1,4 @@
+$Resposta09$
+A resposta correta é a letra B.
+
+O sistema operacional é responsável por garantir que os recursos sejam distribuídos de forma justa e eficiente, permitindo que múltiplos programas funcionem juntos.

@@ -1,0 +1,4 @@
+$Linguagem Binária$
+Todo computador funciona usando sinais elétricos, que podem estar presentes (corrente) ou ausentes (sem corrente). Esses dois estados representam os valores 1 e 0, que compõem a linguagem binária, também chamada de código binário.
+
+Com essa linguagem simples, composta apenas por 0s e 1s, é possível representar qualquer tipo de informação: textos, imagens, vídeos, sons e programas. O computador lê esses sinais e os interpreta de acordo com as instruções fornecidas pelo software.

@@ -1,0 +1,2 @@
+$Semáforos$
+Quando várias threads acessam um mesmo recurso, como um arquivo ou uma variável compartilhada, pode haver conflitos. Por isso, usamos semáforos, que são como “sinaleiros” que controlam o acesso a esse recurso. Eles garantem que apenas uma thread use o recurso por vez, evitando erros e confusões.

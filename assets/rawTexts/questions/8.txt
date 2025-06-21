@@ -1,0 +1,11 @@
+$Pergunta 08$
+O que acontece se o computador não tiver um sistema operacional?
+$A$
+Ele funciona normalmente.
+$B$
+Ele não consegue interpretar comandos do usuário.
+$C$
+Ele vira um videogame.
+$D$
+Ele usa a internet automaticamente.
+#
