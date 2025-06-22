@@ -220,5 +220,5 @@ std::wstring getAlternative(std::string fileName, char alternative) {
     arq.close();
 
     // Retorna a alternativa escolhida
-    return convertToWstring(aux_str);
+    return convertToWstring(insertNewlineEveryNChars(aux_str, 16));
 }

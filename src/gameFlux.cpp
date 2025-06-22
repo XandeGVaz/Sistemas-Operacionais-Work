@@ -330,8 +330,8 @@ bool summonQuestion(sf::RenderWindow &window, sf::Font &font, int n, Answer_t* a
     sf::Text *sfTextAlternative = new sf::Text[4];
 
     // Local offsets
-    float refX = 340, refY = 340;
-    float localOff[4][2] = {{refX, refY},{refX+460, refY},{refX, refY+130},{refX+460, refY+130}};
+    float refX = 320, refY = 300;
+    float localOff[4][2] = {{refX, refY},{refX+450, refY},{refX, refY+170},{refX+450, refY+170}};
 
     for(int i = 0; i < 4; i++) {
 

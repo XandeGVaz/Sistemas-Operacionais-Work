@@ -5,7 +5,7 @@ Porque ela faz o computador funcionar mais rápido.
 $B$
 Porque é mais bonita.
 $C$
-Porque facilita a interação com o sistema sem precisar digitar comandos.
+Porque facilita o uso do sistema sem precisar digitar comandos.
 $D$
 Porque substituiu a CPU.
 #

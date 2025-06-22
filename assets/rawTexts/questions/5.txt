@@ -7,5 +7,5 @@ Manda um sinal direto para o HD.
 $C$
 Interpreta o código do programa e inicia sua execução.
 $D$
-Desliga os outros programas automaticamente.
+Desliga os outros programas de forma automática.
 #
