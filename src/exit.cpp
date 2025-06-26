@@ -26,7 +26,7 @@ bool scoreGame(sf::RenderWindow &window, int score, std::string playerName, sf::
   textScore.setCharacterSize(32);
   textScore.setPosition(SCREEN_WIDTH / 2 + 30, 340); // posição do texto na tela
   textScore.setFont(font);
-  textScore.setString(std::to_string(score)+"/10");
+  textScore.setString(std::to_string(score)+"/"+std::to_string(N_QUESTIONS));
 
   // Centralziação de texto de score na tela
   sf::FloatRect textScoreRect = textScore.getLocalBounds(); // armazenar as dimensões do texto
