@@ -48,7 +48,7 @@ int main(){
         }
 
         // Verifica se o player deseja sair
-        if(exitGame(Window, Score, PlayerName, PrincipalFont)){
+        if(exitGame(Window, Score, PlayerName, DejaVuSansFont)){
             break; // Sai do loop de jogo e o programa termina
         }
         

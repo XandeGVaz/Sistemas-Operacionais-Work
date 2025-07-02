@@ -1,4 +1,5 @@
 #include "exit.hpp"
+#include "fileManipulation.hpp"
 
 // Função auxiliar de visualização do score do jogador
 //    Parâmetros: - window : janela de jogo
@@ -14,7 +15,7 @@ bool scoreGame(sf::RenderWindow &window, int score, std::string playerName, sf::
   textCongratulation.setCharacterSize(32);
   textCongratulation.setPosition(SCREEN_WIDTH / 2 + 30 , 240); // posição do texto na tela
   textCongratulation.setFont(font);
-  textCongratulation.setString("Parabens " + playerName + ", sua ponntuacao no QUIZ foi:");
+  textCongratulation.setString(L"Parabéns " + convertToWstring(playerName) + L", sua pontuação no QUIZ foi:");
   
   // Centralziação de texto de parabenização na tela
   sf::FloatRect textCongratulationRect = textCongratulation.getLocalBounds(); // armazenar as dimensões do texto
